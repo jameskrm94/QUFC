@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1P6P8BX79J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-1P6P8BX79J');
+  </script>
+
+  <!-- Basic metadata -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QUFC Face-Off — Challenge Someone to an Ugly Face Contest</title>
+  <meta
+    name="description"
+    content="Start a QUFC Face-Off: make any ugly face you want, capture it locally, and challenge a friend or family member to make an uglier one. No prompts. No assigned pose."
+  >
+
+  <!-- Social sharing / Open Graph -->
+  <meta property="og:title" content="QUFC Face-Off — Can You Do Worse?">
+  <meta
+    property="og:description"
+    content="Make your ugliest face, capture the evidence, and challenge someone you know to do worse. No prompts. No assigned pose. No dignity."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://qufc.it.com/face-off">
+  <meta property="og:image" content="https://qufc.it.com/images/Collage2.png">
+  <meta property="og:image:alt" content="A collage of QUFC ugly face contest entries">
+  <meta property="og:site_name" content="QUFC">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://qufc.it.com/face-off">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Courgette&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/final.css">
+
+  <!-- Site JavaScript -->
+  <script src="site.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="logo" href="/">
+        QUFC
+        <span>Quarantine Ugly Face Contest</span>
+      </a>
+
+      <button
+        class="menu-button"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        Menu ☰
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/hall">Hall of Faces</a></li>
+          <li><a href="/rubric">Rules</a></li>
+          <li><a href="/firstplace">Prize Cabinet</a></li>
+          <li><a href="/arcade">Arcade</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/donate">Donate</a></li>
+          <li><a class="nav-faceoff" href="/face-off" data-faceoff-cta="nav">Face-Off</a></li>
+          <li><a class="nav-vote" href="/submit">Vote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+      <p
+      class="eyebrow"
+      data-faceoff-hero-eyebrow
+      >
+    QUFC FACE-OFF
+    </p>
+
+<h1 data-faceoff-hero-title>
+  Make an ugly face. Challenge somebody to do worse.
+</h1>
+
+<p data-faceoff-hero-copy>
+  No assigned expression. No difficulty levels. No instructions for your face.
+  Make whatever ridiculous expression you want, capture the evidence, and dare
+  a friend or family member to out-ugly you.
+</p>
+
+
+        <div class="hero-actions">
+          <button
+            class="button button-dark"
+            type="button"
+            data-faceoff-launch
+          >
+            📸 Start a Face-Off
+          </button>
+
+          <a class="button" href="/rubric">
+            Study the official standards →
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <section
+      class="section faceoff-section"
+      data-faceoff-section
+      hidden
+    >
+      <div class="container">
+        <div class="faceoff-box">
+          <button
+            class="faceoff-close-x"
+            type="button"
+            data-faceoff-close-top
+            aria-label="Close Face-Off"
+          >
+            ✕
+          </button>
+
+          <div class="faceoff-heading">
+            <p class="eyebrow">QUFC Experimental Face-Off Laboratory</p>
+
+            <h2 class="section-title" data-faceoff-title>
+              Make Your Worst Face.
+            </h2>
+
+            <p class="section-lead" data-faceoff-lead>
+              Your face, your terrible decisions. Make the ugliest expression you can,
+              photograph the result, and challenge somebody else to do worse.
+            </p>
+          </div>
+
+          <div class="faceoff-privacy" role="note">
+            <strong>🔒 Your face stays on your device.</strong>
+            <p>
+              QUFC does not upload or store your photo. Your camera is only opened after
+              you allow it, and your photo only leaves your device if you explicitly choose
+              to share or save it.
+            </p>
+          </div>
+
+          <div class="faceoff-workspace">
+            <div class="faceoff-camera" data-faceoff-camera-frame>
+              <div
+                class="faceoff-placeholder"
+                data-faceoff-placeholder
+              >
+                <span
+                  class="faceoff-placeholder-icon"
+                  aria-hidden="true"
+                >
+                  🤢
+                </span>
+
+                <h3>Prepare your face.</h3>
+
+                <p>
+                  No prompts. No filters. No dignity. Make whatever facial disaster feels right.
+                </p>
+
+                <button
+                  class="button button-dark"
+                  type="button"
+                  data-faceoff-camera-open
+                >
+                  📷 Open Camera
+                </button>
+              </div>
+
+              <video
+                class="faceoff-video"
+                data-faceoff-video
+                autoplay
+                playsinline
+                muted
+                hidden
+              ></video>
+
+              <img
+                class="faceoff-preview"
+                data-faceoff-preview
+                alt="Preview of your QUFC Face-Off photo"
+                hidden
+              >
+
+              <canvas data-faceoff-canvas hidden></canvas>
+              <canvas data-faceoff-share-canvas hidden></canvas>
+            </div>
+            
+            <div
+              class="faceoff-confirmation"
+              data-faceoff-confirmation
+              hidden
+              role="status"
+              aria-live="polite"
+              >
+  <div
+    class="faceoff-confirmation-icon"
+    aria-hidden="true"
+  >
+    🤢✅
+  </div>
+
+  <h3 data-faceoff-confirmation-title>
+    Face-Off shared!
+  </h3>
+
+  <p data-faceoff-confirmation-copy>
+  Your facial catastrophe has been handed off.
+</p>
+
+<p>
+  <strong>Your face may have a future.</strong>
+  Want to compete or vote when QUFC opens public competitions?
+</p>
+
+<p>
+  <a
+    class="button button-primary"
+    href="/join?source=faceoff"
+  >
+    Join the Future QUFC →
+  </a>
+</p>
+
+<button
+  class="button button-dark"
+  type="button"
+  data-faceoff-confirmation-done
+>
+  Done — My Work Here Is Terrible
+</button>
+</div>
+
+            <div class="faceoff-controls">
+              <button
+                class="button button-primary"
+                type="button"
+                data-faceoff-capture
+                hidden
+              >
+                🤢 Snap My Dignity
+              </button>
+
+              <button
+                class="button"
+                type="button"
+                data-faceoff-retake
+                hidden
+              >
+                🔄 My Dignity Deserves a Retake
+              </button>
+
+              <button
+                class="button button-primary"
+                type="button"
+                data-faceoff-share
+                hidden
+              >
+                💀 Challenge Someone
+              </button>
+                
+                <button
+                class="button"
+                type="button"
+                data-faceoff-challenge-another
+                hidden
+                  >
+                💀 Challenge Someone Else
+                </button>
+                
+              <button
+                class="button"
+                type="button"
+                data-faceoff-close
+              >
+                Never Mind, I Value My Reputation
+              </button>
+            </div>
+
+            <p
+              class="faceoff-status"
+              data-faceoff-status
+              aria-live="polite"
+            ></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section"
+      style="background: #fff; border-block: 3px solid var(--ink);"
+    >
+      <div class="container">
+        <p class="eyebrow">How to participate in important science</p>
+        <h2 class="section-title">Three highly unnecessary steps.</h2>
+
+        <div class="steps">
+          <article class="step">
+            <h3>Make any ugly face</h3>
+            <p>
+              No assigned pose. No difficulty. Your only job is to make your face behave irresponsibly.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3>Capture the evidence</h3>
+            <p>
+              Open the camera, commit fully to the mistake, and snap a photo you may someday deny existed.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3>Challenge somebody</h3>
+            <p>
+              Send your Face-Off card to a friend or family member and dare them to make an uglier one.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Your face, your terrible decisions</p>
+        <h2 class="section-title">No prompts. That's the point.</h2>
+        <p class="section-lead">
+          QUFC is about creativity, comedy, and discovering what your own face is capable of.
+          A Face-Off does not tell you what expression to make. The freedom to invent something
+          uniquely unfortunate is the competition.
+        </p>
+
+        <div class="rule-grid">
+          <article class="rule-card">
+            <span class="rule-number">
+            <h3>1. </span>Make it your own.</h3>
+            <p>
+              Squint your eyes, have 5 chins, or look like somehow caught both rabies and Alzeihmers. Your only limit is your mind.
+            </p>
+          </article>
+
+          <article class="rule-card">
+            <span class="rule-number">
+            <h3>2. </span>Overdo it.</h3>
+            <p>
+              Nothing is too extreme. Push the boundaraies and limits to their maximum. If your face hurts or feels sore, your doing it right.
+            </p>
+          </article>
+
+          <article class="rule-card">
+            <span class="rule-number">
+            <h3>3. </span>Keep it friendly.</h3>
+            <p>
+              QUFC is about funny/ridiculous expressions, not judging anybody's normal day-to-day appearance.
+              Challenge your family, friends, coworkers, etc..... and have fun!
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <div class="panel panel-cyan">
+          <p class="eyebrow">Need professional guidance?</p>
+          <h2 style="margin-top: 0;">There are standards.</h2>
+          <p>
+            The official QUFC rubric judges deliberately ugly faces on realism, creativity,
+            humor, and pure ugliness. You do not have to follow it during a private Face-Off,
+            but excellence does appreciate standards.
+          </p>
+          <a class="button" href="/rubric">Study the rules →</a>
+        </div>
+
+        <div>
+          <p class="eyebrow">Field research</p>
+          <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 3rem);">
+            See how the professionals suffered.
+          </h2>
+          <p>
+            Browse the original QUFC entries for historical evidence that human facial muscles
+            can make deeply regrettable choices without receiving a single instruction.
+          </p>
+          <a class="button button-primary" href="/hall">
+            Visit the Hall of Faces →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="panel panel-gold">
+          <p class="eyebrow">Future championship material?</p>
+          <h2>Think your face belongs in the QUFC?</h2>
+          <p>
+            QUFC began as a family competition, but public contests may open to willing
+            participants in the future. Real entrants. Public voting. Real prizes. Permanent
+            glory. Possibly even a winner interview.
+          </p>
+          <p>Until then, Face-Off is your unofficial training arena.</p>
+
+          <div class="hero-actions">
+            <a class="button" href="/rubric">Study the official rules</a>
+            <a class="button button-primary" href="/hall">
+              Inspect previous competitors →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="panel panel-gold">
+          <p class="eyebrow">A note about “ugly”</p>
+          <h2 style="margin-top: 0;">Ridiculous expressions, not real appearances.</h2>
+          <p>
+            QUFC is about deliberately making funny, strange, exaggerated faces. It is not about
+            judging anyone's normal appearance. The goal is creativity, comedy, and making your own
+            face behave irresponsibly for a few seconds.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>
+        THE QUFC FACIAL AYSMMETRIC RESEARCH DEPARTMENT HAS EXACTLY ZERO MEDICAL CREDENTIALS ✦
+      </span>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>QUFC · Advancing aysmmetrical facial science since 2020</strong>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

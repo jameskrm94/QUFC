@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1P6P8BX79J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1P6P8BX79J');
+</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Support QUFC and help fund future prizes, competitions, website improvements, and completely unnecessary facial research.">
+  <!-- Social sharing / Open Graph -->
+<meta property="og:title" content="Support QUFC">
+<meta property="og:description" content="Support QUFC and help fund future prizes, competitions, website improvements, and completely unnecessary facial research.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://qufc.it.com/donate.html">
+<meta property="og:image" content="https://qufc.it.com/images/Collage2.png">
+<meta property="og:image:alt" content="A collage of QUFC ugly face contest entries">
+<meta property="og:site_name" content="QUFC">
+
+<meta name="twitter:card" content="summary_large_image">
+  <title>Donate — QUFC</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/final.css">
+  <script src="site.js" defer></script>
+
+  <!-- PayPal's official Donate SDK. No card/payment data is handled by QUFC. -->
+  <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+
+  <!-- Donate-page-only styling. The overall design still comes from final.css. -->
+  <style>
+
+    .donate-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(1.25rem, 4vw, 2rem);
+      align-items: stretch;
+    }
+
+    .donate-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      overflow: hidden;
+    }
+
+    .donate-card::after {
+      content: "";
+      position: absolute;
+      width: 88px;
+      height: 88px;
+      right: -34px;
+      top: -34px;
+      border: 3px solid var(--ink);
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: .75;
+      pointer-events: none;
+    }
+
+    .donate-card.zelle-card::after {
+      background: var(--pink);
+    }
+
+    .payment-label {
+      display: inline-flex;
+      align-items: center;
+      align-self: flex-start;
+      margin-bottom: 1rem;
+      padding: .32rem .7rem;
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      background: white;
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      box-shadow: 3px 3px 0 var(--ink);
+    }
+
+    .donate-card h2 {
+      margin: 0 0 .7rem;
+      font-family: 'Courgette', 'Trebuchet MS', cursive;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.05;
+    }
+
+    .donate-card > p {
+      margin-top: 0;
+    }
+
+    .payment-action {
+      margin-top: auto;
+      padding-top: 1rem;
+    }
+
+    .paypal-box {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      border: 2px dashed var(--ink);
+      border-radius: 12px;
+      background: rgba(255,255,255,.65);
+    }
+
+    #paypal-donate-button-container {
+      min-height: 47px;
+    }
+
+    #paypal-donate-button-container img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .zelle-address {
+      margin: 1rem 0;
+      padding: 1rem;
+      border: 3px solid var(--ink);
+      border-radius: 12px;
+      background: white;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    .zelle-address span {
+      display: block;
+      margin-bottom: .3rem;
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 900;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .zelle-address strong {
+      display: block;
+      overflow-wrap: anywhere;
+      font-size: clamp(1rem, 2.5vw, 1.22rem);
+    }
+
+    .zelle-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      align-items: center;
+    }
+
+    .copy-status {
+      min-height: 1.4em;
+      margin: .8rem 0 0;
+      font-size: .9rem;
+      font-weight: 800;
+    }
+
+    .donate-note {
+      margin-top: clamp(1.5rem, 4vw, 2.5rem);
+    }
+
+    .donate-note h2 {
+      margin-top: 0;
+    }
+
+    .tiny-print {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .donate-footer-links {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: .25rem .8rem;
+      align-items: center;
+    }
+    
+    nav a.active {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+}
+
+    @media (max-width: 760px) {
+      .donate-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <link rel="canonical" href="https://qufc.it.com/donate.html">
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="logo" href="index.html">QUFC <span>Quarantine Ugly Face Contest</span></a>
+
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+      Menu ☰
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="hall.html">Hall of Faces</a></li>
+        <li><a href="rubric.html">Rules</a></li>
+        <li><a href="firstplace.html">Prize Cabinet</a></li>
+        <li><a href="arcade.html">Arcade</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="/donate" aria-current="page">Donate</a></li>
+        <li><a class="nav-faceoff" href="/face-off" data-faceoff-cta="nav">Face-Off</a></li>
+        <li><a class="nav-vote" href="submit.html">Vote</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">The funding department has entered the chat</p>
+      <h1>Support the nonsense.</h1>
+      <p>
+        QUFC has survived for years on family pride, questionable facial decisions,
+        and a budget best described as “optimistic.” If this ridiculous corner of
+        the internet made you smile, you can toss a few dollars into the prize cabinet.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Choose your financial weapon</p>
+      <h2 class="section-title">Two ways to contribute.</h2>
+      <p class="section-lead">
+        Completely optional. Deeply appreciated. Almost certainly spent on keeping
+        QUFC online, making future prizes more absurd, or other highly defensible nonsense.
+      </p>
+
+      <div class="donate-grid">
+        <section class="panel panel-cyan donate-card" aria-labelledby="paypal-title">
+          <span class="payment-label">PayPal</span>
+          <h2 id="paypal-title">Donate with PayPal.</h2>
+          <p>
+            Use PayPal's secure donation checkout. You choose the amount, and QUFC
+            never sees or handles your card or bank details.
+          </p>
+
+          <div class="payment-action">
+            <div class="paypal-box">
+              <div id="paypal-donate-button-container">
+                <noscript>
+                  JavaScript is required to display PayPal's official Donate button.
+                </noscript>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel panel-gold donate-card zelle-card" aria-labelledby="zelle-title">
+          <span class="payment-label">Zelle</span>
+          <h2 id="zelle-title">Send with Zelle.</h2>
+          <p>
+            Open Zelle inside your bank or credit union's app, choose <strong>Send</strong>,
+            and use the enrolled QUFC email below as the recipient.
+          </p>
+
+          <div class="payment-action">
+            <div class="zelle-address">
+              <span>Zelle recipient email</span>
+              <strong id="zelle-email">jameskrm1234@gmail.com</strong>
+            </div>
+
+            <div class="zelle-actions">
+              <button class="button button-primary" id="copy-zelle" type="button">
+                Copy Zelle email
+              </button>
+              <a
+                class="button"
+                href="https://enroll.zellepay.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Find your bank ↗
+              </a>
+            </div>
+
+            <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+          </div>
+        </section>
+      </div>
+
+      <aside class="panel donate-note">
+        <p class="eyebrow">The extremely serious fine print</p>
+        <p class="fun-quote">No pressure. The ugly faces remain free.</p>
+        <p>
+          Contributions are voluntary support for the QUFC family project. Sending
+          money does not buy votes, judging influence, secret rubric points, immunity
+          from embarrassing photos, or control of the Prize Cabinet.
+        </p>
+      </aside>
+    </div>
+  </section>
+  
+  <div class="guestbook-launcher-wrap">
+  <button id="open-guestbook" type="button">
+    ✧ Sign my Guestbook ✧
+  </button>
+</div>
+
+</main>
+
+<div
+  id="guestbook-window"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="guestbook-title"
+  hidden
+>
+  <div id="guestbook-titlebar">
+    <span id="guestbook-title">♡ QUFC Guestbook ♡</span>
+
+    <button
+      id="close-guestbook"
+      type="button"
+      aria-label="Close guestbook"
+    >
+      ×
+    </button>
+  </div>
+
+  <iframe
+    src="https://qufc.atabook.org/"
+    title="QUFC Guestbook"
+    loading="lazy"
+  ></iframe>
+</div>
+
+
+</main>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>THE QUFC IS A NON-PROFIT ORGANIZATION THAT DREAMS OF ONE DAY MAKING A PROFIT ✦ </span>
+  </div>
+</div>
+
+
+<footer class="site-footer"><div class="container footer-grid"><div><strong>QUFC · Yes, please</strong> </div></div></footer>
+
+<script>
+  // Official PayPal Donate SDK.
+  // This uses the confirmed PayPal account email as PayPal's "business" value.
+  if (window.PayPal && PayPal.Donation) {
+    PayPal.Donation.Button({
+      env: 'production',
+      business: 'jameskrm1234@gmail.com',
+      image: {
+        src: 'https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif',
+        title: 'PayPal - The safer, easier way to pay online!',
+        alt: 'Donate with PayPal button'
+      }
+    }).render('#paypal-donate-button-container');
+  } else {
+    document.getElementById('paypal-donate-button-container').textContent =
+      'PayPal could not load. Please refresh the page or try again later.';
+  }
+
+  // Copy the Zelle recipient email without requiring any external library.
+  (function () {
+    const email = 'jameskrm1234@gmail.com';
+    const button = document.getElementById('copy-zelle');
+    const status = document.getElementById('copy-status');
+
+    button.addEventListener('click', async function () {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(email);
+        } else {
+          const temp = document.createElement('textarea');
+          temp.value = email;
+          temp.setAttribute('readonly', '');
+          temp.style.position = 'fixed';
+          temp.style.opacity = '0';
+          document.body.appendChild(temp);
+          temp.select();
+          document.execCommand('copy');
+          temp.remove();
+        }
+
+        status.textContent = 'Copied! Paste that email into Zelle in your banking app.';
+        button.textContent = 'Copied ✓';
+      } catch (error) {
+        status.textContent = 'Could not copy automatically. Select the email above and copy it manually.';
+      }
+    });
+  }());
+</script>
+</body>
+</html>

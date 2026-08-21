@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1P6P8BX79J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-1P6P8BX79J');
+  </script>
+
+  <!-- Basic metadata -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — QUFC</title>
+  <meta
+    name="description"
+    content="Contact QUFC with questions, contest business, discoveries, complaints, compliments, or important facial research."
+  >
+
+  <!-- Social sharing / Open Graph -->
+  <meta property="og:title" content="Contact — QUFC">
+  <meta
+    property="og:description"
+    content="Contact QUFC with questions, contest business, archival discoveries, complaints, compliments, or important facial research."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://qufc.it.com/contact">
+  <meta property="og:image" content="https://qufc.it.com/images/Collage2.png">
+  <meta property="og:image:alt" content="A collage of QUFC ugly face contest entries">
+  <meta property="og:site_name" content="QUFC">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://qufc.it.com/contact">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Courgette&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/final.css">
+
+  <!-- Site JavaScript -->
+  <script src="site.js" defer></script>
+
+  <!-- Contact-page-only styles -->
+  <style>
+    .contact-form .form-field select {
+      width: 100%;
+      border: 2px solid var(--ink);
+      border-radius: 10px;
+      padding: .7rem;
+      background: white;
+      color: var(--ink);
+      font: inherit;
+    }
+
+    .contact-form .form-field input:focus,
+    .contact-form .form-field select:focus,
+    .contact-form .form-field textarea:focus {
+      outline: 3px solid var(--cyan);
+      outline-offset: 2px;
+    }
+
+    .contact-form textarea {
+      min-height: 180px;
+    }
+
+    .form-help {
+      margin: .1rem 0 0;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .contact-submit {
+      margin-top: .35rem;
+    }
+
+    .contact-note h2 {
+      margin-top: 0;
+    }
+
+    .contact-note .fun-quote {
+      margin-bottom: 1.25rem;
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+    }
+
+    .contact-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    .honeypot {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="logo" href="/">
+        QUFC
+        <span>Quarantine Ugly Face Contest</span>
+      </a>
+
+      <button
+        class="menu-button"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        Menu ☰
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/hall">Hall of Faces</a></li>
+          <li><a href="/rubric">Rules</a></li>
+          <li><a href="/firstplace">Prize Cabinet</a></li>
+          <li><a href="/arcade">Arcade</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/donate">Donate</a></li>
+          <li><a class="nav-faceoff" href="/face-off" data-faceoff-cta="nav">Face-Off</a></li>
+          <li><a class="nav-vote" href="/submit">Vote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">The complaints department is real now</p>
+        <h1>Contact QUFC</h1>
+        <p>
+          Questions, archival discoveries, contest business, compliments, complaints,
+          and highly important facial research may be submitted below.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <section class="panel" aria-labelledby="contact-form-title">
+          <p class="eyebrow">Official correspondence</p>
+          <h2 class="section-title" id="contact-form-title">Send a message.</h2>
+          <p class="section-lead">
+            Complete the highly sophisticated form below and your message will be
+            delivered directly to QUFC headquarters.
+          </p>
+
+          <form
+          class="contact-form"
+          id="contact-form"
+          action="https://formspree.io/f/myegpkak"
+          method="POST"
+          >
+            <input
+              type="hidden"
+              name="subject"
+              value="New QUFC contact from {{ name }}"
+            >
+
+            <div class="honeypot" aria-hidden="true">
+              <label for="company-website">Leave this field empty</label>
+              <input
+                id="company-website"
+                type="text"
+                name="_gotcha"
+                tabindex="-1"
+                autocomplete="off"
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="name">Your name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                maxlength="100"
+                required
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="email">Your email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                maxlength="254"
+                required
+              >
+              <p class="form-help">This is where QUFC will reply.</p>
+            </div>
+
+            <div class="form-field">
+              <label for="topic">What is this about?</label>
+              <select id="topic" name="topic" required>
+                <option value="" selected disabled>Choose one</option>
+                <option value="General question">General question</option>
+                <option value="Contest / voting">Contest / voting</option>
+                <option value="QUFC archive">Face-Off</option>
+                <option value="Website issue">Arcade Inquiry/Submission</option>
+                <option value="Waitlist update or removal">Waitlist update or removal</option>
+                <option value="Other important nonsense">Other</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                minlength="10"
+                maxlength="5000"
+                required
+              ></textarea>
+            </div>
+
+            <button
+              class="button button-primary contact-submit"
+              type="submit"
+              data-fs-submit-btn
+            >
+              Send to QUFC →
+            </button>
+          </form>
+
+      <div
+        class="panel panel-cyan"
+        id="contact-success"
+        hidden
+        style="margin-top: 1.5rem;"
+        >
+          <p class="eyebrow">
+          Transmission received
+          </p>
+
+        <h3>Your message reached QUFC headquarters. 📡</h3>
+
+        <p>
+          A real human will read it. This may have been a terrible mistake.
+        </p>
+      </div>
+
+<p
+  class="form-help"
+  id="contact-status"
+  role="status"
+  aria-live="polite"
+></p>
+
+          <p class="form-help">
+            By submitting this form, you acknowledge the
+            <a href="/privacy">Privacy Policy</a>.
+          </p>
+        </section>
+
+        <aside class="panel panel-cyan contact-note">
+          <p class="eyebrow">Transmission policy</p>
+          <p class="fun-quote">A real human will read it.</p>
+          <p>
+            This form is for legitimate QUFC correspondence. Please do not submit
+            passwords, financial information, medical records, state secrets, or
+            evidence that you have been practicing ugly faces during work hours.
+          </p>
+          <p>
+            Messages are processed through Formspree and delivered directly to the
+            QUFC inbox.
+          </p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>
+        THE QUFC IS A NON-PROFIT ORGANIZATION THAT DREAMS OF ONE DAY MAKING A PROFIT ✦
+      </span>
+      <span>
+        THE QUFC IS A NON-PROFIT ORGANIZATION THAT DREAMS OF ONE DAY MAKING A PROFIT ✦
+      </span>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>QUFC</strong> · A completely unnecessary family institution.
+      </div>
+
+      <div>
+        <a href="/contact" aria-current="page">Contact</a>
+        <a
+          class="secret-link"
+          href="/secret"
+          title="Nothing to see here"
+          aria-label="A suspiciously tiny secret link"
+        >
+          ✦
+        </a>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+  window.formspree =
+    window.formspree ||
+    function () {
+      (formspree.q = formspree.q || []).push(arguments);
+    };
+
+  formspree('initForm', {
+    formElement: '#contact-form',
+    formId: 'myegpkak',
+
+    onSubmit: () => {
+      const status =
+        document.getElementById('contact-status');
+
+      if (status) {
+        status.textContent =
+          'Sending your transmission to QUFC headquarters…';
+      }
+    },
+
+    onSuccess: ({ form }) => {
+      const success =
+        document.getElementById('contact-success');
+
+      const status =
+        document.getElementById('contact-status');
+
+      if (status) {
+        status.textContent = '';
+      }
+
+      form.hidden = true;
+
+      if (success) {
+        success.hidden = false;
+
+        success.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      }
+    },
+
+    onError: () => {
+      const status =
+        document.getElementById('contact-status');
+
+      if (status) {
+        status.textContent =
+          'QUFC could not send that message. Please check the form and try again.';
+      }
+    },
+
+    onFailure: () => {
+      const status =
+        document.getElementById('contact-status');
+
+      if (status) {
+        status.textContent =
+          'Transmission failure. Please try again in a moment.';
+      }
+    }
+  });
+</script>
+
+<script
+  src="https://unpkg.com/@formspree/ajax@1"
+  defer
+></script>
+  
+</body>
+
+</html>

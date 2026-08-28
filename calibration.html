@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <title>QUFC Internal Calibration Tool</title>
+
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/final.css">
+
+  <style>
+    .cal-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 5rem;
+    }
+
+    .cal-page > p {
+      font-size: 1.05rem;
+    }
+
+    .cal-step {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: white;
+      border: 3px solid var(--ink);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .cal-step h2 {
+      margin-top: 0;
+    }
+
+    .cal-status-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .cal-status-list li {
+      padding: .35rem 0;
+      font-weight: 700;
+    }
+
+    .cal-status-list li.is-done::before {
+      content: "✅ ";
+    }
+
+    .cal-status-list li.is-pending::before {
+      content: "⬜ ";
+    }
+
+    .cal-video-wrap {
+      max-width: 320px;
+      margin: 1rem 0;
+    }
+
+    .cal-video-wrap video {
+      width: 100%;
+      border: 3px solid var(--ink);
+      border-radius: 12px;
+      transform: scaleX(-1);
+    }
+
+    .cal-log {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: var(--paper);
+      border: 2px dashed var(--ink);
+      border-radius: 10px;
+      font-family: 'Courier New', monospace;
+      font-size: .82rem;
+      white-space: pre-wrap;
+      max-height: 320px;
+      overflow: auto;
+    }
+
+    .cal-table-wrap {
+      overflow-x: auto;
+    }
+
+    .cal-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: .85rem;
+    }
+
+    .cal-table th,
+    .cal-table td {
+      border: 1px solid var(--ink);
+      padding: .4rem .55rem;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .cal-table th {
+      background: var(--cyan-soft);
+    }
+
+    .cal-config-output {
+      margin-top: .75rem;
+      padding: 1rem;
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: 10px;
+      font-family: 'Courier New', monospace;
+      font-size: .85rem;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+
+    .cal-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="cal-page">
+    <p class="eyebrow">QUFC internal tool · not linked anywhere on the site · safe to ignore if you're a visitor</p>
+
+    <h1>Face-Off Scoring Calibration</h1>
+
+    <p>
+      This page runs the calibration and tuning system already sitting inside
+      <code>faceoff-calibration.js</code> against the real Hall of Faces archive
+      photos, so you can see how far off the current Ugly Score thresholds are —
+      and find better ones — before touching a single number in the live code.
+    </p>
+
+    <section class="cal-step" id="step-archive">
+      <h2>Step 1 — Score the archive against today's config</h2>
+
+      <p>
+        Runs the current <code>scoringConfig</code> against all six Hall of Faces
+        normal/ugly pairs and compares the result to the score you originally
+        targeted for each one.
+      </p>
+
+      <div class="cal-buttons">
+        <button class="button button-primary" type="button" id="run-archive">
+          Run Archive Comparison
+        </button>
+      </div>
+
+      <div id="archive-status" class="cal-log" hidden></div>
+      <div id="archive-table-wrap" class="cal-table-wrap"></div>
+    </section>
+
+    <section class="cal-step" id="step-controls">
+      <h2>Step 2 — Record negative controls</h2>
+
+      <p>
+        The parameter sweep in Step 3 needs to know what an <em>ordinary</em>
+        face looks like too — otherwise a config that happens to fit the six
+        archive photos could also start scoring a yawn or a laugh as "ugly."
+        Record three quick reference faces with your camera. Nothing here is
+        uploaded or saved anywhere — it stays in this browser tab and disappears
+        when you close it.
+      </p>
+
+      <div class="cal-video-wrap">
+        <video id="cal-video" autoplay playsinline muted hidden></video>
+        <canvas id="cal-canvas" hidden></canvas>
+      </div>
+
+      <div class="cal-buttons">
+        <button class="button" type="button" id="cal-open-camera">
+          📷 Open Camera
+        </button>
+
+        <button class="button button-primary" type="button" id="cal-capture-relaxed" disabled>
+          1. Capture Relaxed / Neutral Face
+        </button>
+
+        <button class="button button-primary" type="button" id="cal-capture-smile" disabled>
+          2. Capture Normal Smile
+        </button>
+
+        <button class="button button-primary" type="button" id="cal-capture-expression" disabled>
+          3. Capture Simple Expression (talking / raised eyebrows)
+        </button>
+
+        <button class="button" type="button" id="cal-reset">
+          🔄 Start Over
+        </button>
+      </div>
+
+      <ul class="cal-status-list">
+        <li id="status-relaxed" class="is-pending">Relaxed / Neutral Face (also becomes the baseline for the other two)</li>
+        <li id="status-smile" class="is-pending">Normal Smile</li>
+        <li id="status-expression" class="is-pending">Simple Expression</li>
+      </ul>
+
+      <div id="controls-log" class="cal-log" hidden></div>
+    </section>
+
+    <section class="cal-step" id="step-sweep">
+      <h2>Step 3 — Run the parameter sweep</h2>
+
+      <p>
+        Tests 375 combinations of the tunable scoring thresholds against the
+        archive photos and the negative controls above, then ranks them by how
+        closely they match your targets without also flagging an ordinary face
+        as ugly.
+      </p>
+
+      <div class="cal-buttons">
+        <button class="button button-dark" type="button" id="run-sweep" disabled>
+          Run Parameter Sweep
+        </button>
+      </div>
+
+      <p id="sweep-requirements" class="form-help">
+        Needs Step 1 and all three Step 2 captures first.
+      </p>
+
+      <div id="sweep-summary" class="cal-log" hidden></div>
+      <div id="sweep-table-wrap" class="cal-table-wrap"></div>
+      <div id="sweep-config-output"></div>
+    </section>
+  </main>
+
+  <script type="module" src="calibration.js"></script>
+</body>
+
+</html>

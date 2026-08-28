@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://qufc.it.com/sitemap.xml
